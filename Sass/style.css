@@ -1,0 +1,11 @@
+.container {
+  color: red;
+  font-size: 50px;
+}
+.container .div p {
+  font-size: 30px;
+}
+
+.heading {
+  color: aqua;
+}/*# sourceMappingURL=style.css.map */
