@@ -1,27 +1,55 @@
-//global Variables
-// $variable : value ;
+$heading_size: 30px;
+$text_size: 15px;
+$primary_color: red;
+$secondary_color: blue;
+$heading_padding: 10% 30%;
+$heading_default_color: aqua;
 
-// Parent -> child
-$heading_size: 50px; //global scope
-
-.container {
-    $heading-size: 30px !global; //local scope
-    color: red;
-    // font-size: 50px;
-
-    .div {
-
-
-        .heading {
-            color: chartreuse;
-            font-size: $heading_size;
-        }
-    }
+@mixin contentStyles($color : yellow, $padding : 10% 30%) {
+    color: $color;
+    font-size: $heading_size;
+    padding: $padding;
 }
 
+@mixin animate-1 ($trans...) {
+    transition: $trans;
+}
 
+.container {
 
-.heading {
-    font-size: $heading_size;
-    color: aqua;
+    .content1 {
+        @include contentStyles(green, $heading_padding);
+
+        // font-size: $heading_size;
+        // color: $primary_color;
+        // padding: 10% 30%;
+        .text1 {
+            font-size: $text_size;
+        }
+    }
+
+    .content2 {
+        @include contentStyles($secondary_color, 10% 5%);
+
+        // font-size: $heading_size;
+        // color: $secondary_color;
+        // padding: 10% 5%;
+        .text2 {
+            font-size: $text_size;
+        }
+    }
+
+    .content3 {
+        @include contentStyles($heading_default_color, 80px );
+        text-align: center;
+
+        &:hover {
+            font-size: 35px;
+            color: red;
+            
+          
+        }
+        @include animate-1( font-size 0.5s, color 1s)
+        // transition: font-size 0.5s, color 1s;
+    }
 }
