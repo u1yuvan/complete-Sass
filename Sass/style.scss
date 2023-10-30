@@ -1,20 +1,27 @@
-.container{
-color: red;
-font-size: 50px;
+//global Variables
+// $variable : value ;
 
-    .div{
-      
+// Parent -> child
+$heading_size: 50px; //global scope
 
-        p{
-            font-size: 30px;
+.container {
+    $heading-size: 30px !global; //local scope
+    color: red;
+    // font-size: 50px;
+
+    .div {
+
+
+        .heading {
+            color: chartreuse;
+            font-size: $heading_size;
         }
     }
-
-  
 }
 
 
 
-.heading{
+.heading {
+    font-size: $heading_size;
     color: aqua;
 }

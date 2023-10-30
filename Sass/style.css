@@ -1,11 +1,12 @@
 .container {
   color: red;
-  font-size: 50px;
 }
-.container .div p {
+.container .div .heading {
+  color: chartreuse;
   font-size: 30px;
 }
 
 .heading {
+  font-size: 30px;
   color: aqua;
 }/*# sourceMappingURL=style.css.map */
